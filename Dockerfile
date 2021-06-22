@@ -1,4 +1,4 @@
-FROM rockylinux/rockylinux:8.4-rc1
+FROM rockylinux/rockylinux:8
 LABEL maintainer="Graham Lillico"
 
 ENV container docker
