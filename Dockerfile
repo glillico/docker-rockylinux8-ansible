@@ -1,4 +1,4 @@
-FROM rockylinux/rockylinux:8
+FROM rockylinux:8
 LABEL maintainer="Graham Lillico"
 
 ENV container docker
@@ -35,10 +35,12 @@ sudo \
 && rm -rf /var/cache/dnf/*
 
 # Upgrade pip.
-RUN pip3 install --upgrade pip
+RUN python3 -m pip install --upgrade pip \
+&& python3 -m pip cache purge
 
 # Install ansible.
-RUN pip3 install ansible
+RUN python3 -m pip install ansible \
+&& python3 -m pip cache purge
 
 # Create ansible directory and copy ansible inventory file.
 RUN mkdir /etc/ansible
