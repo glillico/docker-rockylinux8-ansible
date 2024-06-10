@@ -33,7 +33,7 @@ RUN python3 -m pip install --upgrade pip \
 && python3 -m pip cache purge
 
 # Install ansible.
-RUN python3 -m pip install ansible \
+RUN python3 -m pip install "ansible<10.0" \
 && python3 -m pip cache purge
 
 # Create ansible directory and copy ansible inventory file.
